@@ -8,7 +8,7 @@ from classification_model.processing.data_manager import load_pipeline
 from classification_model.processing.validation import validate_inputs
 
 pipeline_file_name = f"{config.app_config.pipeline_save_file}{_version}.pkl"
-_titanic_pipe = load_pipeline(file_name=pipeline_file_name)
+_score_pipe = load_pipeline(file_name=pipeline_file_name)
 
 
 def make_prediction(
@@ -22,7 +22,7 @@ def make_prediction(
     results = {"predictions": None, "version": _version, "errors": errors}
 
     if not errors:
-        predictions = _titanic_pipe.predict(
+        predictions = _score_pipe.predict(
             X=validated_data[config.model_config.features]
         )
         results = {
