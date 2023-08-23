@@ -7,22 +7,31 @@ training_data_file: train.csv
 test_data_file: test.csv
 
 # Variables
-# The variable we are attempting to predict (sale price)
-target: survived
+# The variable we are attempting to predict (final score)
+target: final score
 
-pipeline_name: titanic_classification_model
-pipeline_save_file: titanic_classification_model_output_v
+pipeline_name: score_regression_model
+pipeline_save_file: score_regression_model_output_v
 
 features:
-  - pclass
-  - sex
+  - index
+  - number_of_siblings
+  - direct_admission
+  - CCA
+  - learning_style
+  - student_ID
+  - gender
+  - tuition
+  - final_test
+  - n_male
+  - n_female
   - age
-  - sibsp
-  - parch
-  - fare
-  - cabin
-  - embarked
-  - title  # generated from name
+  - hours_per_week
+  - attendance_rate
+  - sleep_time
+  - wake_time
+  - mode_of_transport
+  - bag_color
 
 # set train/test split
 test_size: 0.1
@@ -31,21 +40,27 @@ test_size: 0.1
 random_state: 0
 
 unused_fields:
-  - name
-  - ticket
-  - boat
-  - body
-  - home.dest
+  - index
+  - student_ID
+  - final_test
+  - age
+  - wake_time
+  - mode_of_transport
+  - bag_color
 
 numerical_vars:
-  - age
-  - fare
+  - number_of_siblings
+  - n_male
+  - n_female
+  - hours_per_week
+  - attendance_rate
 
 categorical_vars:
-  - sex
-  - cabin
-  - embarked
-  - title
+  - direct_admission
+  - CCA
+  - learning_style
+  - gender
+  - tuition
+  - sleep_time
 
 cabin_vars:
-  - cabin
