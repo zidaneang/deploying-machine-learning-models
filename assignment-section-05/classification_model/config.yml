@@ -1,5 +1,5 @@
 # Package Overview
-package_name: regression_model
+package_name: classification_model
 
 # Data Files
 raw_data_file: raw.csv
@@ -10,8 +10,8 @@ test_data_file: test.csv
 # The variable we are attempting to predict (final score)
 target: final score
 
-pipeline_name: score_regression_model
-pipeline_save_file: score_regression_model_output_v
+pipeline_name: score_classification_model
+pipeline_save_file: score_classification_model_output_v
 
 features:
   - index
